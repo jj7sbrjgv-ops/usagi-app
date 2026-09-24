@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#FF8DA1"           # メインのアクセントカラー（可愛いピンク）
+backgroundColor = "#FFF5F7"        # 全体の背景色（ほんのりピンク）
+secondaryBackgroundColor = "#FFE3E9" # サイドバーやカードの背景色
+textColor = "#5A4A42"              # 文字色（柔らかいダークブラウン）
+font = "sans serif"
