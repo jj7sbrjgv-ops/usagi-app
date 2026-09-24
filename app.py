@@ -16,10 +16,15 @@ FILE_NAME = 'rabbit_data.json'
 
 # --- Google Drive API 関連関数 ---
 def get_drive_service():
-  creds = service_account.Credentials.from_service_account_file(
-      SERVICE_ACCOUNT_FILE, scopes=SCOPES
-  )
-  return build('drive', 'v3', credentials=creds)
+    if "gcp_service_account" in st.secrets:
+        creds = service_account.Credentials.from_service_account_info(
+            st.secrets["gcp_service_account"], scopes=SCOPES
+        )
+    else:
+        creds = service_account.Credentials.from_service_account_file(
+            SERVICE_ACCOUNT_FILE, scopes=SCOPES
+        )
+    return build('drive', 'v3', credentials=creds)
 
 
 def get_file_id(service, file_name, folder_id):
